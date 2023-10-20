@@ -94,7 +94,7 @@ var finances = [
 // Greatest Increase in Profits/Losses: Feb-2012 ($1926159)
 // Greatest Decrease in Profits/Losses: Sep-2013 ($-2196167)
 var totalMonths = finances.length;
-var Total = 0;
+var total = 0;
 var changesSum = 0;
 var greatestIncrease = { date: "", amount: 0 };
 var greatestDecrease = { date: "", amount: 0 };
@@ -103,7 +103,7 @@ var greatestDecrease = { date: "", amount: 0 };
 for (var i = 0; i < finances.length; i++) {
   var monthData = finances[i];
   var amount = monthData[1];
-  netTotal += amount;
+  total += amount;
 
   if (i > 0) {
     var previousMonthData = finances[i - 1];
@@ -123,3 +123,19 @@ for (var i = 0; i < finances.length; i++) {
 }
 // Calculate the average change
 // Display the results in the console
+console.log("Total Months: " + totalMonths);
+console.log("Total: $" + total);
+console.log(
+  "Greatest Increase in profits: " +
+    greatestIncrease.date +
+    " ($" +
+    greatestDecrease.amount +
+    ")"
+);
+console.log(
+  "Greatest Decrease in profits: " +
+    greatestDecrease.date +
+    "($" +
+    greatestDecrease.amount +
+    ")"
+);
