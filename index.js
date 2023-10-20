@@ -98,3 +98,28 @@ var Total = 0;
 var changesSum = 0;
 var greatestIncrease = { date: "", amount: 0 };
 var greatestDecrease = { date: "", amount: 0 };
+
+// Make a loop that goes trough the data to calculate the required values
+for (var i = 0; i < finances.length; i++) {
+  var monthData = finances[i];
+  var amount = monthData[1];
+  netTotal += amount;
+
+  if (i > 0) {
+    var previousMonthData = finances[i - 1];
+    var change = amount - previousMonthData[1];
+    changesSum += change;
+
+    if (change > greatestIncrease.amount) {
+      greatestIncrease.date = monthData[0];
+      greatestIncrease.amount = change;
+    }
+
+    if (change < greatestDecrease.amount) {
+      greatestDecrease.date = monthData[0];
+      greatestDecrease.amount = change;
+    }
+  }
+}
+// Calculate the average change
+// Display the results in the console
