@@ -122,9 +122,11 @@ for (var i = 0; i < finances.length; i++) {
   }
 }
 // Calculate the average change
+var averageChange = changesSum / (totalMonths - 1);
 // Display the results in the console
 console.log("Total Months: " + totalMonths);
 console.log("Total: $" + total);
+console.log("Average Change: $" + averageChange);
 console.log(
   "Greatest Increase in profits: " +
     greatestIncrease.date +
