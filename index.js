@@ -129,7 +129,7 @@ console.log(
   "Greatest Increase in profits: " +
     greatestIncrease.date +
     " ($" +
-    greatestDecrease.amount +
+    greatestIncrease.amount +
     ")"
 );
 console.log(
