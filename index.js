@@ -122,7 +122,7 @@ for (var i = 0; i < finances.length; i++) {
   }
 }
 // Calculate the average change
-var averageChange = changesSum / (totalMonths - 1);
+var averageChange = (changesSum / (totalMonths - 1)).toFixed(2);
 // Display the results in the console
 console.log("Total Months: " + totalMonths);
 console.log("Total: $" + total);
